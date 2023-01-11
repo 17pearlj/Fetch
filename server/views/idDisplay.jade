@@ -1,4 +1,15 @@
 extends layout
 
 block content
+   a(href="/receipts/" class="button") Back
    p #{id} has point value of #{points}
+   br
+   p Retailer name: #{retailer}
+   br
+   p Purchase date: #{purchaseDate}
+   br
+   p Purchase time: #{purchaseTime}
+   br
+   p Item count: #{itemCount}
+   br
+   p Total: #{total}

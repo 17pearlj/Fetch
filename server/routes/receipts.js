@@ -40,7 +40,7 @@ router.post("/process", (req, res) => {
       shortDescription: description[i],
       price: price[i]
     }
-    total += price[i];
+    total += parseInt(price[i]);
     items.push(item);
   }
   const newReceipt = {
@@ -77,7 +77,11 @@ router.get('/:receiptID/points', (req, res) => {
                 message: "Receipt not found",
             });
         }
-        res.status(201).render('idDisplay', { id: id, points: points });
+        res.status(201).render('idDisplay', { id: id, points: points, retailer: receipt.retailer,
+                                              purchaseDate: receipt.purchaseDate, 
+                                              purchaseTime: receipt.purchaseTime,
+                                              itemCount: receipt.items.length,
+                                              total: receipt.total });
     } catch (error) {
         res.status(500).json({
             message: "Failed to retrieve receipt",
