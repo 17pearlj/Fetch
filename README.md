@@ -1,8 +1,8 @@
 # Fetch
 
-Receipt processor problem.
+Receipt processor challenge.
 
-Express application backend with Jade frontend.
+This is an express application with a front end in Jade.
 
 
 To run:
@@ -20,12 +20,13 @@ Valid routes:
 - '/:receiptId/points': Display of points of id.
 
 
-File walkthrough:
+Repository walkthrough:
+- App.js: Express setup
 - Routes: 
-  - Index.js: home page
-  - Receipts: REST functions
+  - Index.js: Router get home page
+  - Receipts: Router with all other REST functions
   - Receipt Processor: Receipt processor calculation
-  - Receipt Processor Testing: Receipt processor testing
+  - Receipt Processor Testing: Receipt processor testing file
 - Views: 
   - Jade frontend files 
  
