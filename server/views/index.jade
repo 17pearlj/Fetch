@@ -1,0 +1,65 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method="POST")
+    input(type="hidden", name="_method", value="PUT")
+    p Retailer Name
+      input(type="text", name="retailer", required ="true")
+    p PurchaseDate
+      input(type="date", name="purchaseDate", required ="true")
+    p PurchaseTime
+      input(type="time", name="purchaseTime", required ="true")
+    p Item count 
+      input(type="number", name="itemCount", id="itemCount", required ="true")
+    button(onClick='addFields()') Update field Count  
+
+    p Item List 
+    ul(id="itemList")
+    
+
+    script.
+      console.log("#{message}");
+      var addFields = function() {
+        event.preventDefault();
+        var number = document.getElementById("itemCount").value;
+        var itemList = document.getElementById("itemList")
+        var itemCount = itemList.getElementsByTagName("li").length
+        if (number < itemCount) {
+          for (let i = 0; i < itemCount - number; i++){
+              itemList.removeChild(itemList.lastChild);
+          }
+        } else {
+          for (let i = itemCount; i < number; i++) {
+            var li = document.createElement("li");
+            li.id = i;
+            var price = document.createElement("input");
+            price.type = "number";
+            price.name = "price";
+            price.placeholder = "Price"
+            price.required = true;
+            var description = document.createElement("input");
+            description.type = "text";
+            description.name = "description";
+            description.placeholder = "Item Description"
+            description.required = true;
+            
+            li.appendChild(description);
+            li.appendChild(price);
+
+            itemList.appendChild(li);
+          }
+        }
+        console.log(number);
+        document.getElementById("subButton").disabled = (number == 0);
+
+       
+      }
+    
+    input(type="submit" id="subButton" disabled=true) 
+
+    p= message 
+
+    a(href="/receipts") View receipts
+    

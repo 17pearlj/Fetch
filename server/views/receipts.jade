@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    h1 Receipts
+
+    div(id="receiptHolder" )
+
+    a(href="/receipts/process" class="button" name="Create new receipt") Create new receipt
+        
+        script.
+            var ids = '#{ids}'
+
+          
+            var dv = document.getElementById("receiptHolder");
+            let build = ""
+            var b = document.createElement("br");
+            for (let i of ids) {
+                if (i == ',') {
+                    var p = document.createElement("a");
+                    p.href = "/receipts/" + build + "/points"
+                    p.innerHTML = build + "   ";
+                    dv.appendChild(p);
+                    dv.appendChild(b);
+                    build = ""
+                } else {
+                    build += i
+                }
+            }
+            var p = document.createElement("a");
+            p.href = "/receipts/" + build + "/points"
+            p.innerHTML = build;
+            dv.appendChild(p);
+            dv.appendChild(b);
+
+
+        
