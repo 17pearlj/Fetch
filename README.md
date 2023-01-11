@@ -24,3 +24,8 @@ File walkthrough:
 - Views: 
   - Jade frontend files 
  
+ 
+ Preview
+ 
+ 
+<img width="300" alt="Captura de Pantalla 2023-01-10 a la(s) 10 24 45 p  m" src="https://user-images.githubusercontent.com/18289791/211710752-dab99801-52c2-4263-971e-e40bd250c343.png">
