@@ -1,11 +1,16 @@
 # Fetch
 
 Receipt processor problem.
+
+Express application backend with Jade frontend.
+
+
 To run:
 1. Download npm
 2. Cd to server
 3. Run npm install
 4. Run npm start
+5. Go to http://localhost:3000/
 
 
 Valid routes:
