@@ -5,7 +5,7 @@ To run:
 1. Download npm
 2. Cd to server
 3. Run npm install
-4. Run npmm start
+4. Run npm start
 
 
 Valid routes:
