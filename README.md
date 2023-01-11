@@ -9,7 +9,7 @@ To run:
 
 
 Valid routes:
-'/': Home
-'/receipts': List of created (and preloaded) receipts
-'/receipts/processor': Form to submit new receipts
-'/:receiptId/points': Display of points of id.
+- '/': Home
+- '/receipts': List of created (and preloaded) receipts
+- '/receipts/processor': Form to submit new receipts
+- '/:receiptId/points': Display of points of id.
